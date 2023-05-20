@@ -29,7 +29,7 @@ for j, y in enumerate(myImageList):
     kp2, des2 =  orb.detectAndCompute(img,None)
     bf = cv2.BFMatcher(cv2.NORM_HAMMING)
     matches = bf.match(des2, des1)
-    matches.sort(key= lambda x: x.distance)
+    # matches.sort(key= lambda x: x.distance)
     good = matches[:int(len(matches)*(per/100))]
 
     imgMatch = cv2.drawMatches(img, kp2, imgq, kp1, good, None, flags=2)
